@@ -5,8 +5,10 @@ char square[10] = {'o','1','2','3','4','5','6','7','8','9'};
 
 int checkwin();
 void board();
-int Play(){
-    int player = 1,i,choice;
+
+int main()
+{
+	int player = 1,i,choice;
 
     char mark;
     do
@@ -47,8 +49,7 @@ int Play(){
             square[9] = mark;
         else
         {
-            cout<<"Invalid move "<<endl;
-            cout<<"Enter Again: ";
+            cout<<"Invalid move ";
 
             player--;
             cin.ignore();
@@ -64,27 +65,10 @@ int Play(){
         cout<<"==>\aPlayer "<<--player<<" win ";
     else
         cout<<"==>\aGame draw";
+
     cin.ignore();
     cin.get();
     return 0;
-}
-
-int main()
-{
-    int i;
-	Play();
-    cout << "Press 1 to play again"<<endl;
-    cout << "To exit press other number" << endl;
-    cin>>i;
-    if (i==1)
-    {
-        Play();
-    }
-    else
-    {
-        exit;
-    }
-    
 }
 
 int checkwin()
